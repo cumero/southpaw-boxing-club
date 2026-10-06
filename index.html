@@ -28,9 +28,9 @@
             formación y especialidades (placeholders + nota provisional)
          5. Nota del formulario demo + mensaje de estado en main.js
          6. Aviso "Contenido provisional..." del footer
-         7. Todos los .slot "[ Pendiente... ]" cuando haya datos reales
-         8. Marcadores [ Foto ] / .photo-frame de la galería y del
+         7. Marcadores [ Foto ] / .photo-frame de la galería y del
             entrenador al recibir fotografías reales
+       Datos ya reales: dirección, teléfono, WhatsApp, horarios e Instagram.
        ============================================================ -->
 
   <a class="skip-link" href="#inicio">Saltar al contenido</a>
@@ -412,17 +412,34 @@
         <div class="contact-grid">
 
           <div class="contact-info reveal">
+
+            <div class="contact-actions">
+              <a class="btn btn--primary" href="https://wa.me/34657021746" target="_blank" rel="noopener">
+                <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5.5 4h13A1.5 1.5 0 0 1 20 5.5v9a1.5 1.5 0 0 1-1.5 1.5H11l-4 2.8v-2.8h-.5A1.5 1.5 0 0 1 5 14.5v-9A1.5 1.5 0 0 1 6.5 4z"/>
+                  <path d="M9.2 8.4c.4 2 2 3.6 4 4l.9-1.3 1.9.9-.5 1.1c-.2.4-.6.7-1.1.7-3.3-.2-6-2.9-6.2-6.2 0-.5.3-.9.7-1.1l1.1-.5.9 1.9z"/>
+                </svg>
+                WhatsApp
+              </a>
+              <a class="btn btn--ghost" href="tel:+34657021746">
+                <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M6.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 5.5 5.5l1.5-2 4 1.5v3c0 1-.8 1.8-1.8 1.7C10.4 18.9 5.1 13.6 4.8 5.3 4.7 4.3 5.5 3.5 6.5 3.5z"/>
+                </svg>
+                Llámanos
+              </a>
+            </div>
+
             <dl class="info-list">
 
               <div class="info-row">
                 <dt>
                   <svg class="info-row__icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6">
-                    <path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z"/>
-                    <circle cx="12" cy="10" r="2.6"/>
+                    <path d="M5.5 4h13A1.5 1.5 0 0 1 20 5.5v9a1.5 1.5 0 0 1-1.5 1.5H11l-4 2.8v-2.8h-.5A1.5 1.5 0 0 1 5 14.5v-9A1.5 1.5 0 0 1 6.5 4z"/>
+                    <path d="M9.2 8.4c.4 2 2 3.6 4 4l.9-1.3 1.9.9-.5 1.1c-.2.4-.6.7-1.1.7-3.3-.2-6-2.9-6.2-6.2 0-.5.3-.9.7-1.1l1.1-.5.9 1.9z"/>
                   </svg>
-                  Dirección
+                  WhatsApp
                 </dt>
-                <dd><span class="slot">[ Pendiente — Galapagar ]</span></dd>
+                <dd><a class="contact-link" href="https://wa.me/34657021746" target="_blank" rel="noopener">657 021 746</a></dd>
               </div>
 
               <div class="info-row">
@@ -432,7 +449,22 @@
                   </svg>
                   Teléfono
                 </dt>
-                <dd><span class="slot">[ Pendiente ]</span></dd>
+                <dd><a class="contact-link" href="tel:+34657021746">657 021 746</a></dd>
+              </div>
+
+              <div class="info-row">
+                <dt>
+                  <svg class="info-row__icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z"/>
+                    <circle cx="12" cy="10" r="2.6"/>
+                  </svg>
+                  Dirección
+                </dt>
+                <dd>
+                  <p class="address">C. Guadarrama, 25
+                    <span class="address__line">28260 Galapagar · Madrid</span>
+                  </p>
+                </dd>
               </div>
 
               <div class="info-row">
@@ -443,7 +475,13 @@
                   </svg>
                   Horarios
                 </dt>
-                <dd><span class="slot">[ Pendiente ]</span></dd>
+                <dd>
+                  <ul class="schedule">
+                    <li><span class="schedule__day">L–V</span><span class="schedule__time">11:00–15:00<br>18:00–21:00</span></li>
+                    <li><span class="schedule__day">Sábado</span><span class="schedule__time">12:00–13:00</span></li>
+                    <li><span class="schedule__day">Domingo</span><span class="schedule__time schedule__time--closed">Cerrado</span></li>
+                  </ul>
+                </dd>
               </div>
 
               <div class="info-row">
@@ -455,10 +493,13 @@
                   </svg>
                   Instagram
                 </dt>
-                <dd><span class="slot">[ @pendiente ]</span></dd>
+                <dd><a class="contact-link" href="https://www.instagram.com/southpaw_boxinglab" target="_blank" rel="noopener">@southpaw_boxinglab</a></dd>
               </div>
 
             </dl>
+
+            <p class="contact-note">Precios y condiciones: consulta directamente con el club.</p>
+
           </div>
 
           <form class="contact-form reveal" id="contact-form" style="--d:.1s" novalidate>
@@ -547,10 +588,10 @@
 
       <div class="footer__data">
         <p class="footer__heading">Datos</p>
-        <span class="slot slot--sm">[ Dirección pendiente ]</span>
-        <span class="slot slot--sm">[ Teléfono pendiente ]</span>
-        <span class="slot slot--sm">[ Horarios pendientes ]</span>
-        <span class="slot slot--sm">[ Instagram pendiente ]</span>
+        <p class="footer__data-item">C. Guadarrama, 25<br>28260 Galapagar · Madrid</p>
+        <a class="footer__data-item" href="tel:+34657021746">657 021 746</a>
+        <p class="footer__data-item">L–V 11:00–15:00 y 18:00–21:00<br>Sábado 12:00–13:00</p>
+        <a class="footer__data-item" href="https://www.instagram.com/southpaw_boxinglab" target="_blank" rel="noopener">@southpaw_boxinglab</a>
       </div>
 
     </div>
@@ -558,8 +599,8 @@
     <div class="container footer__bottom">
       <p>© 2026 Southpaw Boxing Club · Galapagar</p>
       <p class="footer__provisional">
-        Contenido provisional: textos, fotografías y datos de contacto
-        (dirección, teléfono, horarios e Instagram) pendientes de confirmación por el club.
+        Contenido provisional: textos, fotografías y la biografía del entrenador
+        pendientes de confirmación por el club.
       </p>
     </div>
   </footer>

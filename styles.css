@@ -990,6 +990,68 @@ body.menu-open { overflow: hidden; }
 }
 .info-row dd { margin: 0; padding-left: 30px; }
 
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.contact-actions .btn { flex: 1 1 auto; }
+
+.info-row dd a {
+  color: var(--paper);
+  font-weight: 600;
+  border-bottom: 2px solid var(--gold-line);
+  transition: color 0.18s var(--ease), border-color 0.18s var(--ease);
+}
+.info-row dd a:hover {
+  color: var(--gold-500);
+  border-color: var(--gold-500);
+}
+
+.address {
+  display: grid;
+  gap: 4px;
+  line-height: 1.5;
+}
+.address__line { color: var(--on-navy-soft); font-size: 0.94rem; }
+
+.schedule {
+  display: grid;
+  gap: 10px;
+}
+.schedule li {
+  display: grid;
+  grid-template-columns: minmax(0, 5.5rem) 1fr;
+  gap: 14px;
+  align-items: baseline;
+  font-family: var(--font-cond);
+}
+.schedule__day {
+  font-weight: 700;
+  font-size: 0.92rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--gold-500);
+}
+.schedule__time {
+  font-weight: 500;
+  font-size: 1.08rem;
+  letter-spacing: 0.05em;
+  color: var(--paper);
+  line-height: 1.5;
+}
+.schedule__time--closed { color: var(--on-navy-soft); }
+
+.contact-note {
+  margin-top: 24px;
+  max-width: 38ch;
+  font-family: var(--font-cond);
+  font-size: 0.92rem;
+  letter-spacing: 0.06em;
+  color: rgba(244, 239, 228, 0.62);
+}
+
 .slot {
   display: inline-block;
   font-family: var(--font-cond);
@@ -1142,7 +1204,20 @@ body.menu-open { overflow: hidden; }
 }
 .footer__nav a:hover { color: var(--gold-500); }
 
-.footer__data { display: grid; align-content: start; justify-items: start; }
+.footer__data { display: grid; align-content: start; justify-items: start; gap: 10px; }
+.footer__data-item {
+  font-family: var(--font-cond);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  line-height: 1.5;
+  color: var(--on-navy-soft);
+}
+.footer__data a.footer__data-item {
+  width: fit-content;
+  transition: color 0.18s var(--ease);
+}
+.footer__data a.footer__data-item:hover { color: var(--gold-500); }
 
 .footer__bottom {
   border-top: 1px solid var(--navy-line);
@@ -1417,6 +1492,7 @@ body.no-motion .reveal { opacity: 1 !important; transform: none !important; }
   .club-gallery { grid-template-columns: 1fr 1fr; gap: 12px; }
   .footer__grid { grid-template-columns: 1fr; }
   .hero__actions .btn { width: 100%; }
+  .contact-actions .btn { flex-basis: 100%; }
   .photo-frame--hero { box-shadow: 9px 9px 0 rgba(227, 167, 47, 0.16); }
   .seal { width: 96px; right: -8px; bottom: 34px; }
   .footer__bottom { flex-direction: column; }
