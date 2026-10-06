@@ -50,10 +50,25 @@
   var burger = $("#nav-burger");
   var menu = $("#nav-menu");
 
+  function focusMenuFirst() {
+    var first = menu.querySelector("a, button");
+    if (!first) return;
+    (function retry(left) {
+      var cs = getComputedStyle(first);
+      if (cs.visibility !== "hidden" && cs.display !== "none") {
+        first.focus();
+        return;
+      }
+      if (left > 0) setTimeout(function () { retry(left - 1); }, 40);
+    })(5);
+  }
+
   function setMenu(open) {
     burger.setAttribute("aria-expanded", String(open));
     burger.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
     menu.classList.toggle("is-open", open);
+    body.classList.toggle("menu-open", open);
+    if (open) focusMenuFirst();
   }
 
   burger.addEventListener("click", function () {

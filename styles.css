@@ -164,7 +164,7 @@ body.no-texture::after { display: none; }
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 0.22em;
-  color: var(--gold-700);
+  color: var(--gold-ink); /* AA on cream: #8a5e0f ≈ 5:1 */
   display: flex;
   align-items: center;
   gap: 14px;
@@ -194,6 +194,7 @@ body.no-texture::after { display: none; }
 .u-mark {
   position: relative;
   display: inline-block;
+  isolation: isolate; /* keeps the -1 z-index ::after above the section background */
 }
 .u-mark::after {
   content: "";
@@ -392,6 +393,9 @@ body.no-texture::after { display: none; }
 .nav__burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 .nav__burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
+/* lock page scroll while the mobile menu is open */
+body.menu-open { overflow: hidden; }
+
 /* ============================ hero ============================ */
 
 .hero {
@@ -423,6 +427,10 @@ body.no-texture::after { display: none; }
   align-items: center;
 }
 
+.hero__copy {
+  container-type: inline-size;
+}
+
 .hero__eyebrow { margin-bottom: clamp(20px, 3vw, 30px); }
 
 .hero__title {
@@ -433,12 +441,16 @@ body.no-texture::after { display: none; }
   display: grid;
 }
 .hero__title-main {
-  font-size: clamp(3.6rem, 11vw, 8.6rem);
+  /* Anton "SOUTHPAW" = 3.985em; 22cqw caps the line at ~88% of the column */
+  font-size: clamp(3.6rem, 11vw, 8.6rem); /* fallback without container queries */
+  font-size: clamp(3.6rem, min(11vw, 22cqw), 8.6rem);
   color: var(--cream-100);
   letter-spacing: 0.004em;
 }
 .hero__title-outline {
-  font-size: clamp(2rem, 5.6vw, 4.4rem);
+  /* Anton "BOXING CLUB" = 4.716em; 18cqw caps the line at ~85% of the column */
+  font-size: clamp(2rem, 5.6vw, 4.4rem); /* fallback without container queries */
+  font-size: clamp(2rem, min(5.6vw, 18cqw), 4.4rem);
   margin-top: clamp(6px, 1vw, 14px);
   letter-spacing: 0.06em;
   color: transparent;
@@ -553,13 +565,14 @@ body.no-texture::after { display: none; }
   max-width: 26ch;
 }
 
-.hero__figure figcaption {
+.hero__figure figcaption,
+.trainer__figure figcaption {
   margin-top: 14px;
   font-family: var(--font-cond);
   font-size: 0.88rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(244, 239, 228, 0.45);
+  color: rgba(244, 239, 228, 0.6);
 }
 
 /* --- rotating seal --- */
@@ -833,8 +846,8 @@ body.no-texture::after { display: none; }
   top: 0.34em;
   width: 16px;
   height: 8px;
-  border-left: 3px solid var(--gold-700);
-  border-bottom: 3px solid var(--gold-700);
+  border-left: 3px solid var(--gold-ink);
+  border-bottom: 3px solid var(--gold-ink);
   transform: rotate(-45deg);
 }
 
@@ -873,6 +886,71 @@ body.no-texture::after { display: none; }
   padding: 18px;
 }
 .club-gallery .photo-frame__hint { font-size: 0.9rem; }
+
+/* ============================ 04 · entrenador ============================ */
+
+.section--trainer {
+  padding-block: clamp(84px, 11vw, 152px);
+}
+/* same diagonal rope-stripe texture as the hero */
+.section--trainer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    -55deg,
+    transparent 0 46px,
+    rgba(243, 237, 225, 0.028) 46px 47px
+  );
+  pointer-events: none;
+}
+
+.trainer-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(36px, 5vw, 72px);
+  align-items: center;
+}
+
+.trainer__figure {
+  position: relative;
+  margin: 0;
+}
+.photo-frame--trainer {
+  box-shadow: 14px 14px 0 rgba(227, 167, 47, 0.16);
+}
+
+.trainer__body {
+  display: grid;
+  gap: clamp(24px, 3vw, 34px);
+}
+
+.trainer-present {
+  display: grid;
+  gap: 10px;
+}
+.trainer-present__label {
+  font-family: var(--font-cond);
+  font-weight: 700;
+  font-size: 0.86rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--gold-500);
+}
+.slot--block {
+  display: block;
+  max-width: 58ch;
+  line-height: 1.6;
+}
+
+.trainer-data {
+  display: grid;
+  gap: 16px;
+}
+.trainer-data .info-row { gap: 6px; padding-bottom: 16px; }
+.trainer-data .info-row dt { font-size: 0.84rem; }
+.trainer-data .info-row dd { padding-left: 0; }
 
 /* ============================ 04 · contacto ============================ */
 
@@ -949,7 +1027,7 @@ body.no-texture::after { display: none; }
   font-family: var(--font-cond);
   font-size: 0.9rem;
   letter-spacing: 0.06em;
-  color: rgba(244, 239, 228, 0.5);
+  color: rgba(244, 239, 228, 0.62);
   text-align: center;
 }
 
@@ -988,7 +1066,7 @@ body.no-texture::after { display: none; }
 }
 .field select option { background: var(--navy-800); color: var(--cream-100); }
 .field input::placeholder,
-.field textarea::placeholder { color: rgba(244, 239, 228, 0.35); }
+.field textarea::placeholder { color: rgba(244, 239, 228, 0.55); }
 .field input:hover,
 .field select:hover,
 .field textarea:hover { border-color: rgba(243, 237, 225, 0.28); }
@@ -1076,11 +1154,11 @@ body.no-texture::after { display: none; }
   font-family: var(--font-cond);
   font-size: 0.92rem;
   letter-spacing: 0.07em;
-  color: rgba(244, 239, 228, 0.5);
+  color: rgba(244, 239, 228, 0.62);
 }
 .footer__provisional {
   max-width: 68ch;
-  color: rgba(227, 167, 47, 0.66);
+  color: rgba(227, 167, 47, 0.8);
 }
 
 /* ============================ tweaks panel ============================ */
@@ -1288,8 +1366,12 @@ body.no-motion .reveal { opacity: 1 !important; transform: none !important; }
   .hero__figure { max-width: 460px; }
   .seal { right: -14px; bottom: 38px; }
   .principles { grid-template-columns: 1fr; }
+  /* single-column cards would stretch full container: cap the reading measure */
+  .principle p { max-width: 65ch; }
   .class-grid { grid-template-columns: 1fr; max-width: 620px; }
   .club-grid { grid-template-columns: 1fr; }
+  .trainer-grid { grid-template-columns: 1fr; }
+  .trainer__figure { max-width: 460px; }
   .contact-grid { grid-template-columns: 1fr; }
   .footer__grid { grid-template-columns: 1fr 1fr; }
 }

@@ -19,6 +19,20 @@
 </head>
 <body>
 
+  <!-- ============================================================
+       CONTENIDO PROVISIONAL — ELIMINAR ANTES DE PUBLICAR:
+         1. figcapciones "Imagen provisional..." (hero + entrenador)
+         2. "Tipos de sesión provisionales — definir con el club..."
+         3. Nota "Espacio y fotografías pendientes de confirmar..." (El club)
+         4. Perfil del entrenador: nombre, presentación, experiencia,
+            formación y especialidades (placeholders + nota provisional)
+         5. Nota del formulario demo + mensaje de estado en main.js
+         6. Aviso "Contenido provisional..." del footer
+         7. Todos los .slot "[ Pendiente... ]" cuando haya datos reales
+         8. Marcadores [ Foto ] / .photo-frame de la galería y del
+            entrenador al recibir fotografías reales
+       ============================================================ -->
+
   <a class="skip-link" href="#inicio">Saltar al contenido</a>
 
   <!-- ======================= HEADER ======================= -->
@@ -319,12 +333,75 @@
       </div>
     </section>
 
-    <!-- ======================= 04 · CONTACTO ======================= -->
+    <!-- ======================= 04 · EL ENTRENADOR ======================= -->
+    <section class="section section--navy section--trainer" id="entrenador">
+      <div class="container">
+
+        <header class="section-head">
+          <p class="eyebrow reveal"><span class="eyebrow__num">04</span> El entrenador</p>
+          <h2 class="section-title reveal" style="--d:.05s">El que está<br><span class="u-mark">en la esquina</span></h2>
+          <p class="section-lead reveal" style="--d:.1s">
+            La escuela se conoce en la esquina: quién corrige, quién empuja y quién te
+            enseña a hacer las cosas bien. Este es el espacio del entrenador de Southpaw.
+          </p>
+        </header>
+
+        <div class="trainer-grid">
+
+          <figure class="trainer__figure reveal" style="--d:.15s">
+            <!-- FOTO PENDIENTE: sustituir .photo-frame--trainer por <img> real.
+                 Especificaciones: retrato vertical 4:5 · mín. 1200x1500 px · JPG o WebP -->
+            <div class="photo-frame photo-frame--trainer">
+              <svg class="photo-frame__icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4">
+                <rect x="3" y="7" width="18" height="13" rx="2"/>
+                <path d="M8 7l1.4-2.6h5.2L16 7"/>
+                <circle cx="12" cy="13.4" r="3.6"/>
+              </svg>
+              <span class="photo-frame__tag">[ Foto del entrenador ]</span>
+              <p class="photo-frame__hint">Retrato vertical en el club<br>4:5 · mín. 1200×1500 px</p>
+            </div>
+            <figcaption>Imagen provisional — sustituir por fotografía real del entrenador.</figcaption>
+          </figure>
+
+          <div class="trainer__body reveal" style="--d:.2s">
+            <div class="trainer-present">
+              <p class="trainer-present__label">Presentación</p>
+              <p class="slot slot--block">[ Breve presentación del entrenador — texto pendiente ]</p>
+            </div>
+
+            <dl class="trainer-data">
+              <div class="info-row">
+                <dt>Nombre</dt>
+                <dd><span class="slot">[ Nombre pendiente ]</span></dd>
+              </div>
+              <div class="info-row">
+                <dt>Experiencia</dt>
+                <dd><span class="slot">[ Trayectoria y años de experiencia pendientes ]</span></dd>
+              </div>
+              <div class="info-row">
+                <dt>Formación</dt>
+                <dd><span class="slot">[ Titulaciones y certificaciones pendientes ]</span></dd>
+              </div>
+              <div class="info-row">
+                <dt>Especialidades</dt>
+                <dd><span class="slot">[ Enfoque de enseñanza pendiente ]</span></dd>
+              </div>
+            </dl>
+
+            <p class="footnote reveal">Perfil provisional — datos biográficos pendientes de confirmar con el club.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================= 05 · CONTACTO ======================= -->
     <section class="section section--navy" id="contacto">
       <div class="container">
 
         <header class="section-head">
-          <p class="eyebrow reveal"><span class="eyebrow__num">04</span> Contacto</p>
+          <p class="eyebrow reveal"><span class="eyebrow__num">05</span> Contacto</p>
           <h2 class="section-title reveal" style="--d:.05s">Ven a<br>entrenar</h2>
           <p class="section-lead reveal" style="--d:.1s">
             Escríbenos y te contamos cómo dar el primer paso. Si es tu primera vez,
@@ -464,6 +541,7 @@
         <a href="#filosofia">Filosofía</a>
         <a href="#clases">Entrenamiento</a>
         <a href="#club">El club</a>
+        <a href="#entrenador">El entrenador</a>
         <a href="#contacto">Contacto</a>
       </nav>
 
