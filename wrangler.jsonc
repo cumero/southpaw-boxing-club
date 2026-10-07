@@ -1,8 +1,7 @@
 {
-  "name": "web",
+  "name": "southpaw-boxing-club",
   "compatibility_date": "2026-10-07",
   "assets": {
-    "directory": "./",
-    "ignore": [".git/**", ".agents/**", ".opencode/**"]
+    "directory": "./"
   }
 }
