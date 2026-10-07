@@ -9,7 +9,7 @@
 
   <script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
 
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%230B1626'/><text x='32' y='47' text-anchor='middle' font-family='Arial Black,Arial' font-size='44' font-weight='900' fill='%23E3A72F'>S</text></svg>">
+  <link rel="icon" type="image/png" href="assets/logosimple.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,13 +22,12 @@
   <!-- ============================================================
        CONTENIDO PROVISIONAL — ELIMINAR ANTES DE PUBLICAR:
          1. figcapciones "Imagen provisional..." (hero + entrenador)
-         2. "Tipos de sesión provisionales — definir con el club..."
-         3. Nota "Espacio y fotografías pendientes de confirmar..." (El club)
-         4. Perfil del entrenador: nombre, presentación, experiencia,
+         2. Nota "Espacio y fotografías pendientes de confirmar..." (El club)
+         3. Perfil del entrenador: nombre, presentación, experiencia,
             formación y especialidades (placeholders + nota provisional)
-         5. Nota del formulario demo + mensaje de estado en main.js
-         6. Aviso "Contenido provisional..." del footer
-         7. Marcadores [ Foto ] / .photo-frame de la galería y del
+         4. Nota del formulario demo + mensaje de estado en main.js
+         5. Aviso "Contenido provisional..." del footer
+         6. Marcadores [ Foto ] / .photo-frame de la galería y del
             entrenador al recibir fotografías reales
        Datos ya reales: dirección, teléfono, WhatsApp, horarios e Instagram.
        ============================================================ -->
@@ -40,12 +39,9 @@
     <div class="container header__inner">
 
       <a class="brand" href="#inicio" aria-label="Southpaw Boxing Club — inicio">
-        <svg class="brand__mark" viewBox="0 0 48 56" aria-hidden="true" focusable="false">
-          <path d="M11 22C11 10 19 3 28 3C37 3 44 10 44 21C44 28 41 34 36 37H17C13 34 11 29 11 22Z"/>
-          <path d="M11.5 24C5.5 23.6 2.2 27.8 3.2 32C4.2 36.2 9 38.4 13 36.4C11 33.4 10.2 28.4 11.5 24Z"/>
-          <path d="M15 37H39V45C39 49 36 52 32 52H22C18 52 15 49 15 45Z"/>
-          <path class="brand__lace" d="M27 40V49M22 44.5H32"/>
-        </svg>
+        <span class="brand__mark brand__mark--logo">
+          <img src="assets/logo.svg" alt="Southpaw Boxing Club" width="1024" height="1053">
+        </span>
         <span class="brand__text">
           <span class="brand__name">Southpaw</span>
           <span class="brand__sub">Boxing Club · Galapagar</span>
@@ -61,7 +57,10 @@
         <a class="nav__link" href="#clases">Entrenamiento</a>
         <a class="nav__link" href="#club">El club</a>
         <a class="nav__link" href="#contacto">Contacto</a>
-        <a class="btn btn--primary btn--sm nav__cta" href="#contacto">Escríbenos</a>
+        <a class="btn btn--primary btn--sm nav__cta" href="https://wa.me/34657021746" target="_blank" rel="noopener">
+          <svg class="btn__icon btn__icon--wa" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Escríbenos
+        </a>
       </nav>
 
     </div>
@@ -82,8 +81,8 @@
           </h1>
 
           <p class="hero__lead reveal" style="--d:.14s">
-            Boxeo de verdad: técnica, carácter y respeto desde el primer día.
-            Un club de barrio donde se aprende a boxear bien y nadie entrena solo.
+            El objetivo lo pones tú. Aprende desde cero, mejora tu técnica,
+            ponte en forma o prepárate para competir.
           </p>
 
           <div class="hero__actions reveal" style="--d:.2s">
@@ -95,7 +94,7 @@
           </div>
 
           <ul class="hero__chips reveal" style="--d:.26s">
-            <li>Boxeo tradicional</li>
+            <li>Desde cero</li>
             <li>Todos los niveles</li>
             <li>Ambiente de club</li>
           </ul>
@@ -116,18 +115,21 @@
           <div class="seal" aria-hidden="true">
             <svg class="seal__svg" viewBox="0 0 120 120" focusable="false">
               <defs>
-                <path id="sealPath" d="M60,60 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0"/>
+                <path id="sealPath" d="M60,60 m-40,0 a40,40 0 1,1 80,0 a40,40 0 1,1 -80,0"/>
+                <radialGradient id="sealBg" cx="50%" cy="50%" r="50%">
+                  <stop offset="0" stop-color="#0f3a72"/>
+                  <stop offset="0.53" stop-color="#011f47"/>
+                  <stop offset="1" stop-color="#001439"/>
+                </radialGradient>
               </defs>
               <circle cx="60" cy="60" r="58" class="seal__disc"/>
-              <circle cx="60" cy="60" r="51" class="seal__ring-line"/>
+              <circle cx="60" cy="60" r="55" class="seal__ring-line"/>
               <g class="seal__ring">
                 <text class="seal__text">
-                  <textPath href="#sealPath" startOffset="0">SOUTHPAW BOXING CLUB · GALAPAGAR · </textPath>
+                  <textPath href="#sealPath" startOffset="0">SOUTHPAW BOXING CLUB · GALAPAGAR ·&#160;</textPath>
                 </text>
               </g>
-              <path class="seal__glove" d="M53 56C53 50 57 46.5 62 46.5C67 46.5 71 50 71 55C71 58.5 69.5 61.5 67 63H55.5C53.5 61.5 53 59 53 56Z"/>
-              <path class="seal__glove" d="M53.2 57C50 56.8 48.2 59 48.8 61.3C49.3 63.5 51.9 64.7 54 63.6C53 62 52.6 59.5 53.2 57Z"/>
-              <path class="seal__glove" d="M55.5 63H68.5V67.5C68.5 69.7 66.8 71.4 64.6 71.4H59.4C57.2 71.4 55.5 69.7 55.5 67.5Z"/>
+              <image class="seal__sp" href="assets/logosimple.png" x="20" y="20" width="80" height="80"/>
             </svg>
           </div>
 
@@ -179,9 +181,10 @@
           <p class="eyebrow reveal"><span class="eyebrow__num">01</span> Filosofía</p>
           <h2 class="section-title reveal" style="--d:.05s">No es un gimnasio.<br><span class="u-mark">Es un club.</span></h2>
           <p class="section-lead reveal" style="--d:.1s">
-            En Southpaw se entrena en serio, pero nadie empieza sabiendo. Aquí la técnica
-            se enseña, el esfuerzo se respeta y cada persona tiene su sitio desde el
-            momento en que cruza la puerta.
+            Aquí no hace falta saber boxear para empezar. Hay quien viene a aprender,
+            quien busca entrenar y ponerse en forma y quien quiere llegar a competir.
+            Cada uno tiene su objetivo, pero todos empiezan por lo mismo: aprender a
+            boxear y disfrutar entrenando.
           </p>
         </header>
 
@@ -189,20 +192,20 @@
           <li class="principle reveal">
             <span class="principle__num" aria-hidden="true">01</span>
             <h3 class="principle__title">Técnica antes que fuerza</h3>
-            <p>Primero la guardia, los desplazamientos y el golpeo limpio. La intensidad
-               llega cuando la base está, no antes.</p>
+            <p>La base está en la guardia, los desplazamientos y el golpeo. Primero
+               aprendemos a hacerlo bien; después le metemos intensidad.</p>
           </li>
           <li class="principle reveal" style="--d:.1s">
             <span class="principle__num" aria-hidden="true">02</span>
             <h3 class="principle__title">Respeto en todos lados</h3>
-            <p>Del vestuario al ring: compañeros, entrenadores y rivales. El boxeo se
-               gana con educación primero y con los puños después.</p>
+            <p>En el ring se aprende a competir y, sobre todo, a respetar. Compañeros,
+               entrenadores y rivales forman parte del mismo aprendizaje.</p>
           </li>
           <li class="principle reveal" style="--d:.2s">
             <span class="principle__num" aria-hidden="true">03</span>
             <h3 class="principle__title">A tu ritmo, sin atajos</h3>
-            <p>Cada cuerpo y cada objetivo son distintos. Progresamos con constancia y
-               corrección, no con improvisación ni prisa.</p>
+            <p>Cada persona y cada objetivo son distintos. Progresamos con constancia y
+               corrección, sin improvisación ni prisa. Tú marcas el ritmo.</p>
           </li>
         </ol>
 
@@ -217,8 +220,8 @@
           <p class="eyebrow reveal"><span class="eyebrow__num">02</span> Entrenamiento</p>
           <h2 class="section-title reveal" style="--d:.05s">Clases para<br>cada nivel</h2>
           <p class="section-lead reveal" style="--d:.1s">
-            Desde tu primera vez con guantes hasta la preparación de combates.
-            Grupos de trabajo por niveles, con atención al detalle técnico en cada sesión.
+            Desde tu primera vez con guantes hasta la preparación para la competición.
+            Grupos de trabajo con atención al detalle técnico en cada sesión.
           </p>
         </header>
 
@@ -227,13 +230,13 @@
           <article class="class-card reveal">
             <div class="class-card__top">
               <span class="class-card__idx" aria-hidden="true">01</span>
-              <span class="chip">Sin experiencia</span>
+              <span class="chip">Para empezar</span>
             </div>
-            <h3 class="class-card__title">Iniciación</h3>
+            <h3 class="class-card__title">Boxeo desde cero</h3>
             <ul class="class-card__list">
-              <li>Guardia, postura y desplazamientos</li>
-              <li>Golpeo técnico al saco y a los guantes</li>
-              <li>Condicionamiento progresivo</li>
+              <li>Guardia, desplazamientos y fundamentos</li>
+              <li>Saco, técnica y trabajo de sombra</li>
+              <li>Preparación física progresiva</li>
             </ul>
             <a class="class-card__link" href="#contacto">Preguntar por horarios
               <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
@@ -243,13 +246,13 @@
           <article class="class-card reveal" style="--d:.1s">
             <div class="class-card__top">
               <span class="class-card__idx" aria-hidden="true">02</span>
-              <span class="chip">Por niveles</span>
+              <span class="chip">Para entrenar</span>
             </div>
-            <h3 class="class-card__title">Técnica y sparring</h3>
+            <h3 class="class-card__title">Entrenamiento y preparación física</h3>
             <ul class="class-card__list">
-              <li>Combinaciones, distancia y ritmo</li>
-              <li>Sparring supervisado</li>
-              <li>Defensa y lectura táctica</li>
+              <li>Fuerza, resistencia y coordinación</li>
+              <li>Saco, comba y trabajo de sombra</li>
+              <li>Un entrenamiento completo y dinámico</li>
             </ul>
             <a class="class-card__link" href="#contacto">Preguntar por horarios
               <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
@@ -259,13 +262,13 @@
           <article class="class-card reveal" style="--d:.2s">
             <div class="class-card__top">
               <span class="class-card__idx" aria-hidden="true">03</span>
-              <span class="chip">Abierto</span>
+              <span class="chip">Para seguir mejorando</span>
             </div>
-            <h3 class="class-card__title">Preparación física</h3>
+            <h3 class="class-card__title">Técnica y sparring</h3>
             <ul class="class-card__list">
-              <li>Potencia, resistencia y coordinación</li>
-              <li>Saco, cuerda y trabajo de sombras</li>
-              <li>Base física para boxear mejor</li>
+              <li>Combinaciones, distancia y ritmo</li>
+              <li>Defensa y lectura del rival</li>
+              <li>Sparring supervisado</li>
             </ul>
             <a class="class-card__link" href="#contacto">Preguntar por horarios
               <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
@@ -274,31 +277,66 @@
 
         </div>
 
-        <p class="footnote reveal">Tipos de sesión provisionales — definir con el club antes de publicar.</p>
+        <aside class="compete reveal" aria-label="Competición">
+          <span class="compete__arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+          </span>
+          <div class="compete__body">
+            <h3 class="compete__title">¿Quieres competir?</h3>
+            <p class="compete__text">
+              También preparamos boxeadores para competición, con trabajo
+              técnico, físico, táctico, manoplas y sparring específico.
+            </p>
+          </div>
+        </aside>
 
       </div>
     </section>
 
-    <!-- ======================= 03 · EL CLUB ======================= -->
+    <!-- ======================= 03 · BOXEO INFANTIL ======================= -->
+    <section class="section section--youth" id="infantil">
+      <div class="container">
+        <div class="youth">
+          <div class="youth__intro">
+            <p class="eyebrow reveal"><span class="eyebrow__num">03</span> Infantil</p>
+            <h2 class="youth__title reveal" style="--d:.05s">Boxeo infantil</h2>
+            <p class="youth__subtitle reveal" style="--d:.1s">Aprender, hacer deporte y ganar confianza.</p>
+          </div>
+          <div class="youth__body reveal" style="--d:.15s">
+            <p class="youth__text">
+              Trabajamos técnica, coordinación y disciplina en un entorno de club
+              adaptado a cada edad y nivel.
+            </p>
+            <a class="btn btn--ghost youth__cta" href="#contacto">Más información</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= 04 · EL CLUB ======================= -->
     <section class="section section--cream" id="club">
       <div class="container">
 
         <header class="section-head">
-          <p class="eyebrow reveal"><span class="eyebrow__num">03</span> El club</p>
+          <p class="eyebrow reveal"><span class="eyebrow__num">04</span> El club</p>
           <h2 class="section-title reveal" style="--d:.05s">Un ring, sacos<br><span class="u-mark">y buena gente</span></h2>
         </header>
 
         <div class="club-grid">
           <div class="club-copy reveal">
             <p class="section-lead section-lead--flush">
-              Southpaw es un club de barrio en Galapagar: un espacio para entrenar con
-              cabeza, rodeado de gente que lleva tiempo en esto y de gente que acaba de
-              empezar. Sin humo ni pose: trabajo, risas y ganas de mejorar.
+              Southpaw es un club de barrio en Galapagar. Un sitio donde entrenan
+              juntos quienes llevan años en esto y quienes se acaban de poner los
+              guantes por primera vez. Sin humo ni pose: trabajo, risas y ganas de
+              mejorar.
             </p>
             <ul class="club-points">
               <li>Grupos donde te corrigen, no donde te vigilan</li>
-              <li>Ambiente de club, no de cadena</li>
               <li>Progresión por niveles, con paciencia</li>
+              <li class="club-points__item">
+                <span class="club-points__title">Somos un club. Somos una familia.</span>
+                <span class="club-points__text">Un sitio donde vienes a entrenar y acabas formando parte del equipo.</span>
+              </li>
             </ul>
             <p class="club-note">
               <span class="club-note__label">Nota</span>
@@ -333,12 +371,12 @@
       </div>
     </section>
 
-    <!-- ======================= 04 · EL ENTRENADOR ======================= -->
+    <!-- ======================= 05 · EL ENTRENADOR ======================= -->
     <section class="section section--navy section--trainer" id="entrenador">
       <div class="container">
 
         <header class="section-head">
-          <p class="eyebrow reveal"><span class="eyebrow__num">04</span> El entrenador</p>
+          <p class="eyebrow reveal"><span class="eyebrow__num">05</span> El entrenador</p>
           <h2 class="section-title reveal" style="--d:.05s">El que está<br><span class="u-mark">en la esquina</span></h2>
           <p class="section-lead reveal" style="--d:.1s">
             La escuela se conoce en la esquina: quién corrige, quién empuja y quién te
@@ -396,16 +434,17 @@
       </div>
     </section>
 
-    <!-- ======================= 05 · CONTACTO ======================= -->
+    <!-- ======================= 06 · CONTACTO ======================= -->
     <section class="section section--navy" id="contacto">
       <div class="container">
 
         <header class="section-head">
-          <p class="eyebrow reveal"><span class="eyebrow__num">05</span> Contacto</p>
-          <h2 class="section-title reveal" style="--d:.05s">Ven a<br>entrenar</h2>
+          <p class="eyebrow reveal"><span class="eyebrow__num">06</span> Contacto</p>
+          <h2 class="section-title reveal" style="--d:.05s">¿Es tu primera vez?<br><span class="u-mark">Perfecto.</span></h2>
           <p class="section-lead reveal" style="--d:.1s">
-            Escríbenos y te contamos cómo dar el primer paso. Si es tu primera vez,
-            también.
+            Escríbenos, cuéntanos qué buscas y te orientamos. No necesitas experiencia
+            ni tener claro hasta dónde quieres llegar. Puedes empezar simplemente
+            probando.
           </p>
         </header>
 
@@ -415,10 +454,7 @@
 
             <div class="contact-actions">
               <a class="btn btn--primary" href="https://wa.me/34657021746" target="_blank" rel="noopener">
-                <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M5.5 4h13A1.5 1.5 0 0 1 20 5.5v9a1.5 1.5 0 0 1-1.5 1.5H11l-4 2.8v-2.8h-.5A1.5 1.5 0 0 1 5 14.5v-9A1.5 1.5 0 0 1 6.5 4z"/>
-                  <path d="M9.2 8.4c.4 2 2 3.6 4 4l.9-1.3 1.9.9-.5 1.1c-.2.4-.6.7-1.1.7-3.3-.2-6-2.9-6.2-6.2 0-.5.3-.9.7-1.1l1.1-.5.9 1.9z"/>
-                </svg>
+                <svg class="btn__icon btn__icon--wa" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                 WhatsApp
               </a>
               <a class="btn btn--ghost" href="tel:+34657021746">
@@ -431,15 +467,18 @@
 
             <dl class="info-list">
 
-              <div class="info-row">
+              <div class="info-row info-row--whatsapp">
                 <dt>
-                  <svg class="info-row__icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6">
-                    <path d="M5.5 4h13A1.5 1.5 0 0 1 20 5.5v9a1.5 1.5 0 0 1-1.5 1.5H11l-4 2.8v-2.8h-.5A1.5 1.5 0 0 1 5 14.5v-9A1.5 1.5 0 0 1 6.5 4z"/>
-                    <path d="M9.2 8.4c.4 2 2 3.6 4 4l.9-1.3 1.9.9-.5 1.1c-.2.4-.6.7-1.1.7-3.3-.2-6-2.9-6.2-6.2 0-.5.3-.9.7-1.1l1.1-.5.9 1.9z"/>
-                  </svg>
+                  <svg class="info-row__icon info-row__icon--wa" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                   WhatsApp
                 </dt>
-                <dd><a class="contact-link" href="https://wa.me/34657021746" target="_blank" rel="noopener">657 021 746</a></dd>
+                <dd>
+                  <span class="info-row__value">657 021 746</span>
+                  <span class="info-row__cta">Escríbenos
+                    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+                  </span>
+                </dd>
+                <a class="info-row__link" href="https://wa.me/34657021746" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp al 657 021 746"></a>
               </div>
 
               <div class="info-row">
@@ -461,9 +500,13 @@
                   Dirección
                 </dt>
                 <dd>
-                  <p class="address">C. Guadarrama, 25
+                  <a class="address address--link" href="https://www.google.com/maps/dir/?api=1&amp;destination=C.%20Guadarrama%2C%2025%2C%2028260%20Galapagar%2C%20Madrid" target="_blank" rel="noopener">
+                    <span class="address__street">C. Guadarrama, 25</span>
                     <span class="address__line">28260 Galapagar · Madrid</span>
-                  </p>
+                    <span class="address__cta">Cómo llegar
+                      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+                    </span>
+                  </a>
                 </dd>
               </div>
 
@@ -477,7 +520,7 @@
                 </dt>
                 <dd>
                   <ul class="schedule">
-                    <li><span class="schedule__day">L–V</span><span class="schedule__time">11:00–15:00<br>18:00–21:00</span></li>
+                    <li><span class="schedule__day">Lunes a viernes</span><span class="schedule__time">11:00–15:00<br>18:00–21:00</span></li>
                     <li><span class="schedule__day">Sábado</span><span class="schedule__time">12:00–13:00</span></li>
                     <li><span class="schedule__day">Domingo</span><span class="schedule__time schedule__time--closed">Cerrado</span></li>
                   </ul>
@@ -522,13 +565,15 @@
             </div>
 
             <div class="field">
-              <label for="f-interest">¿Qué te interesa?</label>
+              <label for="f-interest">¿Qué buscas?</label>
               <select id="f-interest" name="interest">
                 <option value="">Selecciona una opción</option>
-                <option>Iniciación</option>
-                <option>Técnica y sparring</option>
-                <option>Preparación física</option>
-                <option>Otro / no lo sé todavía</option>
+                <option>Empezar desde cero</option>
+                <option>Aprender y mejorar boxeo</option>
+                <option>Ponerme en forma</option>
+                <option>Boxeo para niños o adolescentes</option>
+                <option>Prepararme para competir</option>
+                <option>No lo tengo claro todavía</option>
               </select>
             </div>
 
@@ -563,18 +608,15 @@
 
       <div class="footer__brand">
         <a class="brand" href="#inicio" aria-label="Southpaw Boxing Club — inicio">
-          <svg class="brand__mark" viewBox="0 0 48 56" aria-hidden="true" focusable="false">
-            <path d="M11 22C11 10 19 3 28 3C37 3 44 10 44 21C44 28 41 34 36 37H17C13 34 11 29 11 22Z"/>
-            <path d="M11.5 24C5.5 23.6 2.2 27.8 3.2 32C4.2 36.2 9 38.4 13 36.4C11 33.4 10.2 28.4 11.5 24Z"/>
-            <path d="M15 37H39V45C39 49 36 52 32 52H22C18 52 15 49 15 45Z"/>
-            <path class="brand__lace" d="M27 40V49M22 44.5H32"/>
-          </svg>
+          <span class="brand__mark brand__mark--logo">
+            <img src="assets/logo.svg" alt="Southpaw Boxing Club" width="1024" height="1053">
+          </span>
           <span class="brand__text">
             <span class="brand__name">Southpaw</span>
             <span class="brand__sub">Boxing Club · Galapagar</span>
           </span>
         </a>
-        <p class="footer__tagline">Escuela de boxeo en Galapagar. Técnica, carácter y cercanía.</p>
+        <p class="footer__tagline">Escuela de boxeo en Galapagar. Desde cero hasta competición.</p>
       </div>
 
       <nav class="footer__nav" aria-label="Navegación del pie">

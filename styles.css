@@ -258,6 +258,9 @@ body.no-texture::after { display: none; }
 }
 
 .btn__icon { width: 18px; height: 18px; flex: none; }
+/* icono de marca WhatsApp dentro de botones: relleno con el color heredado, sin trazo ni fondo */
+.btn__icon.btn__icon--wa { fill: currentColor; stroke: none; }
+.nav__cta .btn__icon--wa { width: 16px; height: 16px; }
 
 .btn--primary {
   background: var(--gold-500);
@@ -322,6 +325,22 @@ body.no-texture::after { display: none; }
   height: auto;
   fill: var(--gold-500);
   flex: none;
+}
+.brand__mark--logo {
+  position: relative;
+  width: 51px;
+  height: 51px;
+  flex: 0 0 51px;
+  display: grid;
+  place-items: center;
+  overflow: visible;
+}
+.brand__mark--logo img {
+  display: block;
+  position: static;
+  width: 51px;
+  height: auto;
+  max-width: none;
 }
 .brand__lace {
   fill: none;
@@ -586,7 +605,7 @@ body.menu-open { overflow: hidden; }
 }
 .seal__svg { width: 100%; height: auto; }
 .seal__disc {
-  fill: var(--navy-900);
+  fill: url(#sealBg);
   stroke: var(--gold-500);
   stroke-width: 2;
 }
@@ -603,13 +622,11 @@ body.menu-open { overflow: hidden; }
 .seal__text {
   font-family: var(--font-cond);
   font-weight: 700;
-  font-size: 11.5px;
-  letter-spacing: 2.1px;
+  font-size: 13px;
+  letter-spacing: 1.92px;
   fill: var(--gold-500);
   text-transform: uppercase;
 }
-.seal__glove { fill: var(--cream-100); }
-
 @keyframes seal-spin {
   to { transform: rotate(360deg); }
 }
@@ -714,8 +731,9 @@ body.menu-open { overflow: hidden; }
 }
 
 .class-card {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  /* filas: cabecera · título · lista (flexible) · enlace */
+  grid-template-rows: auto auto 1fr auto;
   background: rgba(11, 22, 38, 0.55);
   border: 1px solid var(--navy-line);
   border-radius: var(--radius);
@@ -763,9 +781,12 @@ body.menu-open { overflow: hidden; }
   text-transform: uppercase;
   line-height: 1;
   margin-bottom: 20px;
+  /* reserva dos líneas (em del propio título) para alinear el inicio de las listas */
+  min-height: 2em;
 }
 .class-card__list {
   display: grid;
+  align-self: start;
   gap: 12px;
   margin-bottom: 28px;
 }
@@ -788,7 +809,6 @@ body.menu-open { overflow: hidden; }
   transform: rotate(45deg);
 }
 .class-card__link {
-  margin-top: auto;
   display: inline-flex;
   align-items: center;
   gap: 9px;
@@ -813,7 +833,108 @@ body.menu-open { overflow: hidden; }
 .class-card__link:hover { color: var(--gold-400); gap: 14px; }
 .class-card__link:hover svg { transform: translateX(3px); }
 
-/* ============================ 03 · el club ============================ */
+/* ---- competición (banda de progresión, no tarjeta) ---- */
+
+.compete {
+  position: relative;
+  margin-top: clamp(30px, 4vw, 48px);
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 4vw, 44px);
+  background: var(--navy-900);
+  border-left: 4px solid var(--gold-500);
+  padding: clamp(28px, 4vw, 42px) clamp(24px, 4vw, 50px);
+  overflow: hidden;
+}
+.compete::after {
+  content: "";
+  position: absolute;
+  right: clamp(16px, 5vw, 64px);
+  top: 50%;
+  width: clamp(80px, 13vw, 170px);
+  height: clamp(80px, 13vw, 170px);
+  border-top: clamp(9px, 1.8vw, 18px) solid rgba(243, 237, 225, 0.05);
+  border-right: clamp(9px, 1.8vw, 18px) solid rgba(243, 237, 225, 0.05);
+  transform: translateY(-50%) rotate(45deg);
+  pointer-events: none;
+}
+.compete__arrow {
+  position: relative;
+  z-index: 1;
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: clamp(46px, 6vw, 62px);
+  height: clamp(46px, 6vw, 62px);
+  color: var(--gold-500);
+  border: 1px solid var(--navy-line);
+}
+.compete__arrow svg { width: 55%; height: 55%; stroke: currentColor; }
+.compete__body { position: relative; z-index: 1; }
+.compete__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.compete__text {
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: var(--on-navy-soft);
+  max-width: 68ch;
+  text-wrap: pretty;
+}
+
+/* ============================ 03 · boxeo infantil ============================ */
+
+.section--youth {
+  background:
+    radial-gradient(80% 60% at 0% 0%, rgba(227, 167, 47, 0.09), transparent 58%),
+    var(--navy-800);
+  color: var(--paper);
+}
+.section--youth .eyebrow { color: var(--gold-500); }
+
+.youth {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: start;
+  border-top: 2px solid var(--gold-500);
+  padding-top: clamp(28px, 4vw, 52px);
+}
+.youth__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2.4rem, 5.4vw, 4.4rem);
+  line-height: 0.98;
+  text-transform: uppercase;
+  margin-top: 18px;
+}
+.youth__subtitle {
+  margin-top: 18px;
+  font-family: var(--font-cond);
+  font-weight: 600;
+  font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--gold-500);
+  text-wrap: pretty;
+}
+.youth__body { padding-top: clamp(6px, 3vw, 48px); }
+.youth__text {
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  line-height: 1.7;
+  color: var(--on-navy-soft);
+  max-width: 52ch;
+  text-wrap: pretty;
+}
+.youth__cta { margin-top: 30px; }
+
+/* ============================ 04 · el club ============================ */
 
 .club-grid {
   display: grid;
@@ -849,6 +970,19 @@ body.menu-open { overflow: hidden; }
   border-left: 3px solid var(--gold-ink);
   border-bottom: 3px solid var(--gold-ink);
   transform: rotate(-45deg);
+}
+.club-points__title { display: block; }
+.club-points__text {
+  display: block;
+  margin-top: 5px;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.98rem;
+  text-transform: none;
+  letter-spacing: normal;
+  line-height: 1.55;
+  color: var(--cream-ink-soft);
+  text-wrap: pretty;
 }
 
 .club-note {
@@ -887,7 +1021,7 @@ body.menu-open { overflow: hidden; }
 }
 .club-gallery .photo-frame__hint { font-size: 0.9rem; }
 
-/* ============================ 04 · entrenador ============================ */
+/* ============================ 05 · entrenador ============================ */
 
 .section--trainer {
   padding-block: clamp(84px, 11vw, 152px);
@@ -952,7 +1086,7 @@ body.menu-open { overflow: hidden; }
 .trainer-data .info-row dt { font-size: 0.84rem; }
 .trainer-data .info-row dd { padding-left: 0; }
 
-/* ============================ 04 · contacto ============================ */
+/* ============================ 06 · contacto ============================ */
 
 .contact-grid {
   display: grid;
@@ -988,6 +1122,8 @@ body.menu-open { overflow: hidden; }
   stroke-width: 1.6;
   flex: none;
 }
+/* icono de marca WhatsApp: relleno con el color heredado (dorado), sin trazo ni fondo */
+.info-row__icon.info-row__icon--wa { fill: currentColor; stroke: none; }
 .info-row dd { margin: 0; padding-left: 30px; }
 
 .contact-actions {
@@ -1016,17 +1152,67 @@ body.menu-open { overflow: hidden; }
 }
 .address__line { color: var(--on-navy-soft); font-size: 0.94rem; }
 
+/* dirección → Maps y bloque WhatsApp (mejoras UX de contacto) */
+.info-row dd a.address--link {
+  color: inherit;
+  font-weight: inherit;
+  border-bottom: none;
+}
+.address__street { transition: color 0.18s var(--ease); }
+.address--link:hover .address__street,
+.address--link:hover .address__line { color: var(--gold-500); }
+
+.address__cta,
+.info-row__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-cond);
+  font-weight: 700;
+  font-size: 0.84rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--gold-500);
+  transition: color 0.18s var(--ease), gap 0.18s var(--ease);
+}
+.address__cta svg,
+.info-row__cta svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  transition: transform 0.18s var(--ease);
+}
+.address--link:hover .address__cta,
+.info-row--whatsapp:hover .info-row__cta { color: var(--gold-400); gap: 12px; }
+.address--link:hover .address__cta svg,
+.info-row--whatsapp:hover .info-row__cta svg { transform: translateX(3px); }
+
+.info-row--whatsapp {
+  position: relative;
+  transition: background-color 0.18s var(--ease);
+}
+.info-row--whatsapp .info-row__link { position: absolute; inset: 0; }
+.info-row__value {
+  display: block;
+  font-weight: 700;
+  font-size: 1.16rem;
+  letter-spacing: 0.02em;
+  color: var(--paper);
+  transition: color 0.18s var(--ease);
+}
+.info-row--whatsapp .info-row__cta { margin-top: 6px; }
+.info-row--whatsapp:hover .info-row__value { color: var(--gold-500); }
+
 .schedule {
   display: grid;
-  gap: 10px;
-}
-.schedule li {
-  display: grid;
-  grid-template-columns: minmax(0, 5.5rem) 1fr;
-  gap: 14px;
+  grid-template-columns: max-content 1fr;
+  gap: 10px 16px;
   align-items: baseline;
   font-family: var(--font-cond);
 }
+.schedule li { display: contents; }
 .schedule__day {
   font-weight: 700;
   font-size: 0.92rem;
@@ -1443,12 +1629,14 @@ body.no-motion .reveal { opacity: 1 !important; transform: none !important; }
   .principles { grid-template-columns: 1fr; }
   /* single-column cards would stretch full container: cap the reading measure */
   .principle p { max-width: 65ch; }
-  .class-grid { grid-template-columns: 1fr; max-width: 620px; }
+  .class-grid { grid-template-columns: 1fr; max-width: 620px; grid-auto-rows: 1fr; }
   .club-grid { grid-template-columns: 1fr; }
   .trainer-grid { grid-template-columns: 1fr; }
   .trainer__figure { max-width: 460px; }
   .contact-grid { grid-template-columns: 1fr; }
   .footer__grid { grid-template-columns: 1fr 1fr; }
+  .youth { grid-template-columns: 1fr; }
+  .youth__body { padding-top: 8px; }
 }
 
 @media (max-width: 860px) {
@@ -1489,10 +1677,13 @@ body.no-motion .reveal { opacity: 1 !important; transform: none !important; }
 @media (max-width: 640px) {
   body { font-size: 1rem; }
   .field-row { grid-template-columns: 1fr; }
+  .compete { flex-direction: column; align-items: flex-start; }
   .club-gallery { grid-template-columns: 1fr 1fr; gap: 12px; }
   .footer__grid { grid-template-columns: 1fr; }
   .hero__actions .btn { width: 100%; }
   .contact-actions .btn { flex-basis: 100%; }
+  .schedule { grid-template-columns: 1fr; gap: 6px; }
+  .schedule li + li .schedule__day { margin-top: 12px; }
   .photo-frame--hero { box-shadow: 9px 9px 0 rgba(227, 167, 47, 0.16); }
   .seal { width: 96px; right: -8px; bottom: 34px; }
   .footer__bottom { flex-direction: column; }
