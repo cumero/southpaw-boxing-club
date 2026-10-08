@@ -537,6 +537,17 @@ body.menu-open { overflow: hidden; }
 .photo-frame--hero {
   box-shadow: 14px 14px 0 rgba(227, 167, 47, 0.16);
 }
+/* fotografía real de la fachada: ocupa todo el marco (relación 4:5 = ratio del archivo) */
+.photo-frame__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+/* el filete interior del marco se pinta sobre la fotografía */
+.photo-frame::before { z-index: 1; }
 .photo-frame__idx {
   position: absolute;
   top: 14px;
