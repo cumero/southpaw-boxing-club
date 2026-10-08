@@ -1,6 +1,6 @@
 /* Southpaw Boxing Club — main.js
    Header state, mobile nav, scroll reveal, active link,
-   contact form demo, Tweaks panel (persisted). */
+   contact form demo. */
 
 (function () {
   "use strict";
@@ -11,24 +11,6 @@
   var $$ = function (sel, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); };
 
   var body = document.body;
-  var storageOK = true;
-  try {
-    var probe = "__spc__";
-    window.localStorage.setItem(probe, "1");
-    window.localStorage.removeItem(probe);
-  } catch (e) { storageOK = false; }
-
-  function store(key, value) {
-    if (!storageOK) return;
-    try {
-      if (value === null) window.localStorage.removeItem(key);
-      else window.localStorage.setItem(key, value);
-    } catch (e) { /* ignore */ }
-  }
-  function recall(key) {
-    if (!storageOK) return null;
-    try { return window.localStorage.getItem(key); } catch (e) { return null; }
-  }
 
   /* ---------------- header scroll state ---------------- */
 
@@ -83,6 +65,23 @@
     if (e.key === "Escape" && menu.classList.contains("is-open")) {
       setMenu(false);
       burger.focus();
+      return;
+    }
+    /* focus trap: mientras el menú móvil está abierto, Tab circula solo por sus enlaces */
+    if (e.key === "Tab" && menu.classList.contains("is-open") &&
+        getComputedStyle(burger).display !== "none") {
+      var items = $$("a[href], button:not([disabled])", menu);
+      if (!items.length) return;
+      var first = items[0];
+      var last = items[items.length - 1];
+      var active = document.activeElement;
+      if (e.shiftKey && (active === first || !menu.contains(active))) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && (active === last || !menu.contains(active))) {
+        e.preventDefault();
+        first.focus();
+      }
     }
   });
 
@@ -100,8 +99,7 @@
   var observer = null;
 
   function startReveal() {
-    if (prefersReduced || body.classList.contains("no-motion") ||
-        !("IntersectionObserver" in window)) {
+    if (prefersReduced || !("IntersectionObserver" in window)) {
       showAll();
       return;
     }
@@ -160,99 +158,4 @@
       "Mensaje simulado — este formulario todavía no está conectado a ningún correo.";
     form.reset();
   });
-
-  /* ---------------- Tweaks panel ---------------- */
-
-  var tweaks = $("#tweaks");
-  var twToggle = $("#tweaks-toggle");
-  var twPanel = $("#tweaks-panel");
-  var twClose = $("#tweaks-close");
-  var twTexture = $("#tw-texture");
-  var twMotion = $("#tw-motion");
-  var twAccents = $$("input[name='tw-accent']");
-
-  var KEY = "spc-tweaks";
-
-  function setPanel(open) {
-    twPanel.hidden = !open;
-    twToggle.setAttribute("aria-expanded", String(open));
-  }
-
-  twToggle.addEventListener("click", function () {
-    setPanel(twPanel.hidden);
-  });
-  twClose.addEventListener("click", function () {
-    setPanel(false);
-    twToggle.focus();
-  });
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && !twPanel.hidden) {
-      setPanel(false);
-      twToggle.focus();
-    }
-  });
-
-  function applyTexture(on) {
-    body.classList.toggle("no-texture", !on);
-    twTexture.checked = on;
-  }
-
-  function applyMotion(on) {
-    body.classList.toggle("no-motion", !on);
-    twMotion.checked = on;
-    if (!on) {
-      if (observer) {
-        reveals.forEach(function (el) { observer.unobserve(el); });
-      }
-      showAll();
-    } else {
-      observer = null;
-      startReveal();
-    }
-  }
-
-  function applyAccent(value) {
-    document.documentElement.setAttribute("data-accent", value);
-    twAccents.forEach(function (r) { r.checked = r.value === value; });
-  }
-
-  function persist() {
-    store(KEY, JSON.stringify({
-      texture: twTexture.checked,
-      motion: twMotion.checked,
-      accent: (document.documentElement.getAttribute("data-accent") || "mostaza")
-    }));
-  }
-
-  twTexture.addEventListener("change", function () {
-    applyTexture(twTexture.checked);
-    persist();
-  });
-
-  twMotion.addEventListener("change", function () {
-    applyMotion(twMotion.checked);
-    persist();
-  });
-
-  twAccents.forEach(function (r) {
-    r.addEventListener("change", function () {
-      if (r.checked) {
-        applyAccent(r.value);
-        persist();
-      }
-    });
-  });
-
-  /* restore saved tweaks */
-  (function restore() {
-    var saved = null;
-    try { saved = JSON.parse(recall(KEY) || "null"); } catch (e) { saved = null; }
-    if (!saved) return;
-    if (typeof saved.texture === "boolean") applyTexture(saved.texture);
-    if (typeof saved.motion === "boolean") applyMotion(saved.motion);
-    if (saved.accent) applyAccent(saved.accent);
-  })();
-
-  /* avoid unused-var lint on tweaks root */
-  void tweaks;
 })();
