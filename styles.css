@@ -1280,7 +1280,12 @@ body.menu-open { overflow: hidden; }
 }
 .contact-promo .contact-actions {
   flex-direction: column;
+  flex-wrap: nowrap;
   margin-bottom: 0;
+}
+.contact-promo .contact-actions .btn {
+  width: 100%;
+  flex-basis: auto;
 }
 
 .slot {
