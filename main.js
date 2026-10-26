@@ -1,6 +1,5 @@
 /* Southpaw Boxing Club — main.js
-   Header state, mobile nav, scroll reveal, active link,
-   contact form demo. */
+   Header state, mobile nav, scroll reveal, active link. */
 
 (function () {
   "use strict";
@@ -141,21 +140,4 @@
     }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
     sections.forEach(function (sec) { spy.observe(sec); });
   }
-
-  /* ---------------- contact form (demo) ---------------- */
-
-  var form = $("#contact-form");
-  var status = $("#form-status");
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      return;
-    }
-    status.hidden = false;
-    status.textContent =
-      "Mensaje simulado — este formulario todavía no está conectado a ningún correo.";
-    form.reset();
-  });
 })();

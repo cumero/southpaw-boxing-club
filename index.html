@@ -21,16 +21,9 @@
 <body>
 
   <!-- ============================================================
-       CONTENIDO PROVISIONAL — ELIMINAR ANTES DE PUBLICAR:
-         1. figcaption "Imagen provisional..." (entrenador)
-         2. Nota "Espacio y fotografías pendientes de confirmar..." (El club)
-         3. Perfil del entrenador: nombre, presentación, experiencia,
-            formación y especialidades (placeholders + nota provisional)
-         4. Nota del formulario demo + mensaje de estado en main.js
-         5. Aviso "Contenido provisional..." del footer
-         6. Marcadores [ Foto ] / .photo-frame de la galería y del
-            entrenador al recibir fotografías reales
-       Datos ya reales: dirección, teléfono, WhatsApp, horarios e Instagram.
+       CONTENIDO PENDIENTE — sección del entrenador:
+       nombre, presentación, experiencia, formación, especialidades
+       y fotografía definitiva.
        ============================================================ -->
 
   <a class="skip-link" href="#inicio">Saltar al contenido</a>
@@ -336,32 +329,28 @@
                 <span class="club-points__text">Un sitio donde vienes a entrenar y acabas formando parte del equipo.</span>
               </li>
             </ul>
-            <p class="club-note">
-              <span class="club-note__label">Nota</span>
-              Espacio y fotografías pendientes de confirmar por el club.
-            </p>
           </div>
 
           <div class="club-gallery">
             <div class="photo-frame reveal">
               <span class="photo-frame__idx" aria-hidden="true">01</span>
-              <span class="photo-frame__tag">[ Foto ]</span>
-              <p class="photo-frame__hint">Ring o zona de sparring</p>
+              <img class="photo-frame__img" src="assets/ring.png" width="1122" height="1402"
+                   alt="Ring del Southpaw Boxing Club" loading="lazy" decoding="async">
             </div>
             <div class="photo-frame reveal" style="--d:.08s">
               <span class="photo-frame__idx" aria-hidden="true">02</span>
-              <span class="photo-frame__tag">[ Foto ]</span>
-              <p class="photo-frame__hint">Sacos, cuerda y material</p>
+              <img class="photo-frame__img" src="assets/sacos.png" width="1122" height="1402"
+                   alt="Zona de sacos del Southpaw Boxing Club" loading="lazy" decoding="async">
             </div>
             <div class="photo-frame reveal" style="--d:.16s">
               <span class="photo-frame__idx" aria-hidden="true">03</span>
-              <span class="photo-frame__tag">[ Foto ]</span>
-              <p class="photo-frame__hint">Entrenamiento en grupo</p>
+              <img class="photo-frame__img" src="assets/maquinas.png" width="1122" height="1402"
+                   alt="Zona de máquinas del Southpaw Boxing Club" loading="lazy" decoding="async">
             </div>
             <div class="photo-frame reveal" style="--d:.24s">
               <span class="photo-frame__idx" aria-hidden="true">04</span>
-              <span class="photo-frame__tag">[ Foto ]</span>
-              <p class="photo-frame__hint">Fachada o exterior del club</p>
+              <img class="photo-frame__img" src="assets/vestuarios.png" width="1122" height="1402"
+                   alt="Vestuarios del Southpaw Boxing Club" loading="lazy" decoding="async">
             </div>
           </div>
         </div>
@@ -591,10 +580,6 @@
 
     <div class="container footer__bottom">
       <p>© 2026 Southpaw Boxing Club · Galapagar</p>
-      <p class="footer__provisional">
-        Contenido provisional: textos, fotografías y la biografía del entrenador
-        pendientes de confirmación por el club.
-      </p>
     </div>
   </footer>
 
