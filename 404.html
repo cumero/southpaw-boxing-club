@@ -9,23 +9,50 @@
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="preload" href="/assets/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/styles.css">
+  <style>
+    .ko__photo { position: relative; }
+    .ko__photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(.35) brightness(.7); }
+    .ko__count {
+      position: absolute; inset: 0; display: grid; place-items: center;
+      font-family: var(--font-display); font-size: clamp(110px, 22vw, 240px); line-height: 1;
+      color: #F4EFE4; text-shadow: 0 6px 0 rgba(0,0,0,.35);
+    }
+    .ko__count.is-beat { animation: ko-beat .35s ease-out; }
+    .ko__count.is-ko { color: #E3A72F; font-size: clamp(80px, 16vw, 170px); animation: ko-beat .5s ease-out; }
+    .ko__ref {
+      position: absolute; left: 16px; bottom: 16px;
+      font-family: var(--font-cond); font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+      font-size: .85rem; color: #0B1626; background: #E3A72F; padding: 6px 12px;
+    }
+    @keyframes ko-beat { from { transform: scale(1.35); opacity: .2; } to { transform: none; opacity: 1; } }
+    .ko__actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+    @media (prefers-reduced-motion: reduce) { .ko__count, .ko__count.is-ko { animation: none; } }
+  </style>
 </head>
 <body>
   <main class="hero">
     <div class="container hero__grid">
       <div class="hero__copy">
-        <p class="eyebrow hero__eyebrow"><span class="eyebrow__num">404</span> Fuera del ring</p>
+        <p class="eyebrow hero__eyebrow"><span class="eyebrow__num">Error 404</span> Fuera de combate</p>
         <h1 class="hero__title">
-          <span class="hero__title-main">Golpe</span>
-          <span class="hero__title-outline">al aire</span>
+          <span class="hero__title-main">Esta página</span>
+          <span class="hero__title-outline">besó la lona</span>
         </h1>
-        <p class="hero__lead">La página que buscas no existe o ha cambiado de sitio. Vuelve al inicio y sigue entrenando.</p>
-        <p><a class="btn btn--primary" href="/">Volver al inicio</a></p>
+        <p class="hero__lead">El árbitro ya está contando y no se levanta. Vuelve al inicio antes de que llegue a diez.</p>
+        <div class="ko__actions">
+          <a class="btn btn--primary" href="/">Volver al inicio</a>
+          <a class="btn btn--ghost" href="/#contacto">Mi primera clase gratis</a>
+        </div>
       </div>
       <figure class="hero__figure">
-        <img src="/assets/logo.svg" alt="" width="1024" height="1053">
+        <div class="photo-frame photo-frame--hero ko__photo">
+          <img src="/assets/ring-560.webp" srcset="/assets/ring-560.webp 560w, /assets/ring-1122.webp 1122w" sizes="(max-width: 767px) 60vw, 45vw" width="1122" height="1402" alt="El ring del club, vacío">
+          <p class="ko__count" id="count" aria-live="polite">1</p>
+          <span class="ko__ref" aria-hidden="true">Cuenta del árbitro</span>
+        </div>
       </figure>
     </div>
   </main>
+  <script src="/404.js" defer></script>
 </body>
 </html>
