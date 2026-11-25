@@ -1709,7 +1709,7 @@ body.menu-open { overflow: hidden; }
     justify-content: flex-end;
     background:
       linear-gradient(180deg, rgba(11, 22, 38, 0.5) 0%, rgba(11, 22, 38, 0.55) 25%, rgba(11, 22, 38, 0.92) 55%, var(--navy-900) 100%),
-      image-set(url("/assets/fachada-560.webp") 1x, url("/assets/fachada-760.webp") 2x) center top / cover no-repeat,
+      url("/assets/fachada-760.webp") center top / cover no-repeat,
       var(--navy-900);
   }
   .hero .hero__figure { display: none; }
