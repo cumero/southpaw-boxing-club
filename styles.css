@@ -1643,7 +1643,7 @@ body.menu-open { overflow: hidden; }
   border: 1px solid rgba(227, 167, 47, 0.45);
   box-shadow: 9px 9px 0 rgba(227, 167, 47, 0.14);
   overflow: hidden;
-  max-width: 460px;
+  max-width: 560px;
 }
 .map-static img {
   display: block; width: 100%; height: auto;
