@@ -7,3 +7,6 @@ index.html.broken
 index.html.utf8
 main.js.modified
 .github/
+node_modules/
+package.json
+package-lock.json
