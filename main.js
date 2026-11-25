@@ -141,3 +141,53 @@
     sections.forEach(function (sec) { spy.observe(sec); });
   }
 })();
+
+/* ---------------- abierto ahora (hora de Madrid) ---------------- */
+(function () {
+  "use strict";
+  // 0 = domingo … 6 = sábado · minutos desde medianoche
+  var HOURS = {
+    0: [],
+    1: [[660, 900], [1080, 1260]],
+    2: [[660, 900], [1080, 1260]],
+    3: [[660, 900], [1080, 1260]],
+    4: [[660, 900], [1080, 1260]],
+    5: [[660, 900], [1080, 1260]],
+    6: [[720, 780]]
+  };
+  var NAMES = ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"];
+  function fmt(m) { return ("0" + Math.floor(m / 60)).slice(-2) + ":" + ("0" + (m % 60)).slice(-2); }
+  function now() {
+    try {
+      var parts = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Madrid", weekday: "short", hour: "2-digit", minute: "2-digit", hour12: false }).formatToParts(new Date());
+      var get = function (t) { for (var i = 0; i < parts.length; i++) if (parts[i].type === t) return parts[i].value; };
+      return { day: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].indexOf(get("weekday")), mins: (Number(get("hour")) % 24) * 60 + Number(get("minute")) };
+    } catch (e) { var d = new Date(); return { day: d.getDay(), mins: d.getHours() * 60 + d.getMinutes() }; }
+  }
+  function status() {
+    var n = now(), today = HOURS[n.day], i;
+    for (i = 0; i < today.length; i++) if (n.mins >= today[i][0] && n.mins < today[i][1]) return { open: true, day: n.day, text: "Abierto ahora · hasta las " + fmt(today[i][1]) };
+    for (i = 0; i < today.length; i++) if (n.mins < today[i][0]) return { open: false, day: n.day, text: "Cerrado ahora · abrimos a las " + fmt(today[i][0]) };
+    var next = (n.day + 1) % 7;
+    while (!HOURS[next].length) next = (next + 1) % 7;
+    var when = next === (n.day + 1) % 7 ? "mañana " : "el ";
+    return { open: false, day: n.day, text: "Cerrado ahora · abrimos " + when + NAMES[next] + " a las " + fmt(HOURS[next][0][0]) };
+  }
+  function paint() {
+    var s = status();
+    Array.prototype.forEach.call(document.querySelectorAll("[data-open-now]"), function (el) {
+      el.textContent = s.text;
+      var p = el.closest(".hero__open"); if (p) p.setAttribute("data-state", s.open ? "open" : "closed");
+    });
+    Array.prototype.forEach.call(document.querySelectorAll("[data-open-badge]"), function (el) {
+      el.textContent = s.open ? "Abierto ahora" : "Cerrado ahora";
+      el.setAttribute("data-state", s.open ? "open" : "closed");
+      el.hidden = false;
+    });
+    Array.prototype.forEach.call(document.querySelectorAll(".schedule li[data-days]"), function (li) {
+      li.classList.toggle("is-today", li.getAttribute("data-days").split(",").map(Number).indexOf(s.day) !== -1);
+    });
+  }
+  paint();
+  setInterval(paint, 60000);
+})();
