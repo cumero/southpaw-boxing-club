@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://southpaw.boxing-club.workers.dev/sitemap.xml

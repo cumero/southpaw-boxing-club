@@ -9,14 +9,54 @@
 
   <script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
 
-  <link rel="icon" type="image/png" href="assets/logosimple.png">
+  <link rel="canonical" href="https://southpaw.boxing-club.workers.dev/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="Southpaw Boxing Club">
+  <meta property="og:title" content="Southpaw Boxing Club — Escuela de boxeo en Galapagar">
+  <meta property="og:description" content="Técnica, carácter y respeto. Boxeo para todos los niveles e infantil en Galapagar. Tu primera clase, gratis.">
+  <meta property="og:url" content="https://southpaw.boxing-club.workers.dev/">
+  <meta property="og:image" content="https://southpaw.boxing-club.workers.dev/share.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Fachada del Southpaw Boxing Club en Galapagar">
+  <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@500;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-  <link rel="preload" as="image" href="assets/fachada.png" width="1122" height="1402">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="preload" href="/assets/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/barlow-condensed-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" href="/assets/fachada-1122.webp" imagesrcset="/assets/fachada-560.webp 560w, /assets/fachada-1122.webp 1122w" imagesizes="(max-width: 767px) 92vw, 45vw" fetchpriority="high">
+  <link rel="stylesheet" href="/styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ExerciseGym",
+    "@id": "https://southpaw.boxing-club.workers.dev/#club",
+    "name": "Southpaw Boxing Club",
+    "description": "Escuela de boxeo en Galapagar: iniciación, técnica, sparring, preparación física y boxeo infantil.",
+    "url": "https://southpaw.boxing-club.workers.dev/",
+    "image": "https://southpaw.boxing-club.workers.dev/share.jpg",
+    "logo": "https://southpaw.boxing-club.workers.dev/assets/logo.svg",
+    "sameAs": ["https://www.instagram.com/southpaw_boxinglab"],
+    "telephone": "+34 657 02 17 46",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "C. Guadarrama, 25",
+      "postalCode": "28260",
+      "addressLocality": "Galapagar",
+      "addressRegion": "Madrid",
+      "addressCountry": "ES"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "11:00", "closes": "15:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "18:00", "closes": "21:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "12:00", "closes": "13:00" }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -32,7 +72,7 @@
   <header class="site-header" id="site-header">
     <div class="container header__inner">
 
-      <a class="brand" href="#inicio" aria-label="Southpaw Boxing Club — inicio">
+      <a class="brand" href="#inicio" aria-label="Southpaw Boxing Club · Galapagar — inicio">
         <span class="brand__mark brand__mark--logo">
           <img src="assets/logo.svg" alt="Southpaw Boxing Club" width="1024" height="1053">
         </span>
@@ -98,7 +138,7 @@
         <figure class="hero__figure reveal" style="--d:.18s">
           <div class="photo-frame photo-frame--hero">
             <span class="photo-frame__idx" aria-hidden="true">01</span>
-            <img class="photo-frame__img" src="assets/fachada.png" width="1122" height="1402"
+            <img class="photo-frame__img" src="assets/fachada-1122.webp" srcset="assets/fachada-560.webp 560w, assets/fachada-1122.webp 1122w" sizes="(max-width: 767px) 92vw, 45vw" width="1122" height="1402"
                  alt="Fachada del Southpaw Boxing Club en C. Guadarrama, 25, Galapagar"
                  loading="eager" decoding="async" fetchpriority="high">
           </div>
@@ -334,22 +374,22 @@
           <div class="club-gallery">
             <div class="photo-frame reveal">
               <span class="photo-frame__idx" aria-hidden="true">01</span>
-              <img class="photo-frame__img" src="assets/ring.png" width="1122" height="1402"
+              <img class="photo-frame__img" src="assets/ring-1122.webp" srcset="assets/ring-560.webp 560w, assets/ring-1122.webp 1122w" sizes="(max-width: 767px) 46vw, 24vw" width="1122" height="1402"
                    alt="Ring del Southpaw Boxing Club" loading="lazy" decoding="async">
             </div>
             <div class="photo-frame reveal" style="--d:.08s">
               <span class="photo-frame__idx" aria-hidden="true">02</span>
-              <img class="photo-frame__img" src="assets/sacos.png" width="1122" height="1402"
+              <img class="photo-frame__img" src="assets/sacos-1122.webp" srcset="assets/sacos-560.webp 560w, assets/sacos-1122.webp 1122w" sizes="(max-width: 767px) 46vw, 24vw" width="1122" height="1402"
                    alt="Zona de sacos del Southpaw Boxing Club" loading="lazy" decoding="async">
             </div>
             <div class="photo-frame reveal" style="--d:.16s">
               <span class="photo-frame__idx" aria-hidden="true">03</span>
-              <img class="photo-frame__img" src="assets/maquinas.png" width="1122" height="1402"
+              <img class="photo-frame__img" src="assets/maquinas-1122.webp" srcset="assets/maquinas-560.webp 560w, assets/maquinas-1122.webp 1122w" sizes="(max-width: 767px) 46vw, 24vw" width="1122" height="1402"
                    alt="Zona de máquinas del Southpaw Boxing Club" loading="lazy" decoding="async">
             </div>
             <div class="photo-frame reveal" style="--d:.24s">
               <span class="photo-frame__idx" aria-hidden="true">04</span>
-              <img class="photo-frame__img" src="assets/vestuarios.png" width="1122" height="1402"
+              <img class="photo-frame__img" src="assets/vestuarios-1122.webp" srcset="assets/vestuarios-560.webp 560w, assets/vestuarios-1122.webp 1122w" sizes="(max-width: 767px) 46vw, 24vw" width="1122" height="1402"
                    alt="Vestuarios del Southpaw Boxing Club" loading="lazy" decoding="async">
             </div>
           </div>
@@ -546,7 +586,7 @@
     <div class="container footer__grid">
 
       <div class="footer__brand">
-        <a class="brand" href="#inicio" aria-label="Southpaw Boxing Club — inicio">
+        <a class="brand" href="#inicio" aria-label="Southpaw Boxing Club · Galapagar — inicio">
           <span class="brand__mark brand__mark--logo">
             <img src="assets/logo.svg" alt="Southpaw Boxing Club" width="1024" height="1053">
           </span>
