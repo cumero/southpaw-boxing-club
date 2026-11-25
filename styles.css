@@ -1636,6 +1636,44 @@ body.menu-open { overflow: hidden; }
   .footer__bottom { flex-direction: column; }
 }
 
+/* DEMO · mapa estático en Contacto */
+.map-static {
+  display: block;
+  margin-top: 18px;
+  border: 1px solid rgba(227, 167, 47, 0.45);
+  box-shadow: 9px 9px 0 rgba(227, 167, 47, 0.14);
+  overflow: hidden;
+  max-width: 460px;
+}
+.map-static img {
+  display: block; width: 100%; height: auto;
+  transition: transform 0.4s var(--ease);
+}
+.map-static:hover img { transform: scale(1.03); }
+.map-static__credit {
+  margin-top: 10px;
+  font-size: 0.75rem;
+  color: rgba(244, 239, 228, 0.55);
+}
+.map-static__credit a { color: inherit; }
+
+/* DEMO · portada en móvil: la fachada de fondo detrás del título,
+   así el club se ve nada más entrar. */
+@media (max-width: 640px) {
+  .hero {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background:
+      linear-gradient(180deg, rgba(11, 22, 38, 0.5) 0%, rgba(11, 22, 38, 0.55) 25%, rgba(11, 22, 38, 0.92) 55%, var(--navy-900) 100%),
+      image-set(url("/assets/fachada-560.webp") 1x, url("/assets/fachada-760.webp") 2x) center top / cover no-repeat,
+      var(--navy-900);
+  }
+  .hero .hero__figure { display: none; }
+  .hero__lead { color: #F4EFE4; }
+}
+
 @media (max-width: 420px) {
   .club-gallery { grid-template-columns: 1fr; }
   .brand__sub { letter-spacing: 0.2em; }
