@@ -511,6 +511,12 @@ body.menu-open { overflow: hidden; }
   color: var(--on-navy-soft);
 }
 .hero__chips { column-gap: 0; }
+@media (max-width: 640px) {
+  /* móvil: las tres etiquetas siempre en una línea */
+  .hero__chips { flex-wrap: nowrap; white-space: nowrap; }
+  .hero__chips li { font-size: clamp(10px, 3.35vw, 0.9rem); letter-spacing: 0.08em; }
+  .hero__chips li:not(:last-child)::after { margin: 0 0.45em; }
+}
 .hero__chips li:not(:last-child)::after {
   content: "·";
   margin: 0 10px;
