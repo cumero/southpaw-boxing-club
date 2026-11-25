@@ -1539,6 +1539,18 @@ body.menu-open { overflow: hidden; }
   transition: opacity 0.7s var(--ease) var(--d, 0s), transform 0.7s var(--ease) var(--d, 0s);
 }
 
+/* La portada no espera al JavaScript: el texto es visible desde el primer
+   pintado y solo se desliza al cargar (mejora el LCP en móvil). */
+.js .hero .reveal {
+  opacity: 1;
+  transform: none;
+  transition: none;
+  animation: hero-rise 0.7s var(--ease) var(--d, 0s) both;
+}
+@keyframes hero-rise {
+  from { transform: translateY(22px); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {
