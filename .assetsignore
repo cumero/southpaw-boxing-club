@@ -10,3 +10,5 @@ main.js.modified
 node_modules/
 package.json
 package-lock.json
+assets/logo.png
+assets/logosp.png
