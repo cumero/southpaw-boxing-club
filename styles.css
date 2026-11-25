@@ -66,6 +66,8 @@
 
 html {
   scroll-behavior: smooth;
+  /* cualquier salto a un #ancla deja libre la cabecera fija */
+  scroll-padding-top: calc(var(--header-h) + 16px);
   -webkit-text-size-adjust: 100%;
 }
 
@@ -140,7 +142,6 @@ body::after {
 
 .section {
   padding-block: clamp(72px, 10vw, 132px);
-  scroll-margin-top: var(--header-h);
   position: relative;
 }
 
